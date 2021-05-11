@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">MT Catalogue V2</string>
+    <string name="full_app_name">Movie or Tv Show Catalogue V2</string>
+    <string name="mt_image">MT Image</string>
+    <string name="rating_rate">Rating Rate</string>
+    <string name="share">Share</string>
+    <string name="first_air">First Air Date:</string>
+    <string name="release_date">Release Date</string>
+    <plurals name="user_rate">
+        <item quantity="one">%d user</item>
+        <item quantity="other">%d users</item>
+    </plurals>
+    <string name="movie">Movie</string>
+    <string name="movies">Movies</string>
+    <string name="tv_show">Tv Show\n%1$s, %2$s (%3$s)</string>
+    <string name="tv_shows">Tv Shows</string>
+    <string name="background_poster">Background Poster</string>
+    <string name="overview_in_english_only">Overview\n%s\n(in English only)</string>
+    <string name="company_logo">Company Logo</string>
+    <string name="production_companies">Production Companies</string>
+    <string name="genres">Genres:</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="favorite_menu">Favorite Menu</string>
+    <string name="sort_order">Sort Order</string>
+    <string name="expand">Expand</string>
+</resources>

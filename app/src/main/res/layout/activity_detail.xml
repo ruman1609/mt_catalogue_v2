@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorPrimary"
+    tools:context=".views.detail.DetailActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/detAppBarLayout"
+        style="@style/InitObj"
+        android:visibility="gone">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/detCollapse"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:contentScrim="?attr/colorPrimary"
+            app:layout_scrollFlags="exitUntilCollapsed|scroll">
+
+            <ImageView
+                android:id="@+id/detBg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/background_poster"
+                android:scaleType="fitXY"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/transparent_black" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_collapseMode="parallax"
+                app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintLayout2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.519"
+                    app:layout_constraintStart_toEndOf="@+id/detImg"
+                    app:layout_constraintTop_toBottomOf="@+id/detType"
+                    app:layout_constraintVertical_bias="0.107">
+
+                    <TextView
+                        android:id="@+id/detRating"
+                        style="@style/Text.H1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/rating_rate"
+                        android:drawablePadding="@dimen/halfNormal"
+                        app:drawableStartCompat="@drawable/ic_rating"
+                        app:layout_constraintBottom_toTopOf="@+id/detUserRate"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="9.9" />
+
+                    <TextView
+                        android:id="@+id/detUserRate"
+                        style="@style/Text.H2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/detRating"
+                        tools:text="9999 users" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <ImageView
+                    android:id="@+id/detImg"
+                    android:layout_width="200dp"
+                    android:layout_height="300dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:contentDescription="@string/mt_image"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:src="@tools:sample/avatars" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintLayout4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintEnd_toEndOf="@+id/constraintLayout2"
+                    app:layout_constraintStart_toStartOf="@+id/constraintLayout2"
+                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
+
+                    <TextView
+                        android:id="@+id/detAirTitle"
+                        style="@style/Text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toTopOf="@+id/detDate"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="Air Date:" />
+
+                    <TextView
+                        android:id="@+id/detDate"
+                        style="@style/Text.H2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/detAirTitle"
+                        tools:text="30 September 2021" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/detType"
+                    style="@style/Text.H2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="24dp"
+                    android:textAlignment="center"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toEndOf="@+id/detImg"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.145"
+                    tools:text="TIPE" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="48dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/constraintLayout4"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/constraintLayout4"
+                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout4"
+                    app:layout_constraintVertical_bias="0.0">
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        style="@style/Text.H2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/genres"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/detGenres"
+                        style="@style/Text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView4"
+                        tools:text="test\ntest" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@null"
+                android:theme="@style/Toolbar"
+                android:visibility="visible"
+                app:layout_collapseMode="pin" />
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/detNested"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/detail_content"
+        android:visibility="gone"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/normal">
+
+            <TextView
+                android:id="@+id/detOverview"
+                style="@style/Text.H1"
+                android:text="@string/overview_in_english_only"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/detID"
+                style="@style/Text.Caption"
+                android:textAlignment="center"
+                tools:text="123456" />
+
+            <TextView
+                android:id="@+id/detDesc"
+                style="@style/Text"
+                tools:text="LOREM IPSUM DOLOR SIT AMET\nLOREM IPSUM DOLOR SIT AMET\nLOREM IPSUM DOLOR SIT AMET
+                \nLOREM IPSUM DOLOR SIT AMET\nLOREM IPSUM DOLOR SIT AMET\nLOREM IPSUM DOLOR SIT AMET
+                \nLOREM IPSUM DOLOR SIT AMET\nLOREM IPSUM DOLOR SIT AMET\nLOREM IPSUM DOLOR SIT AMET
+                \nLOREM IPSUM DOLOR SIT AMET\nLOREM IPSUM DOLOR SIT AMET\nLOREM IPSUM DOLOR SIT AMET
+                \nLOREM IPSUM DOLOR SIT AMET\nLOREM IPSUM DOLOR SIT AMET\nLOREM IPSUM DOLOR SIT AMET
+                \nLOREM IPSUM DOLOR SIT AMET\nLOREM IPSUM DOLOR SIT AMET\nLOREM IPSUM DOLOR SIT AMET
+                \nLOREM IPSUM DOLOR SIT AMET\nLOREM IPSUM DOLOR SIT AMET\nLOREM IPSUM DOLOR SIT AMET
+                \nLOREM IPSUM DOLOR SIT AMET\nLOREM IPSUM DOLOR SIT AMET\nLOREM IPSUM DOLOR SIT AMET" />
+
+            <TextView
+                android:id="@+id/detCompany"
+                style="@style/Text.H1"
+                android:layout_marginTop="@dimen/normal"
+                android:layout_marginBottom="@dimen/halfNormal"
+                android:text="@string/production_companies"
+                android:textAlignment="center" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/detCompanies"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/halfNormal"
+                android:layout_marginEnd="@dimen/halfNormal"
+                android:layout_marginBottom="64dp"
+                tools:listitem="@layout/per_company" />
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/detShare"
+        style="@style/CustomFab"
+        android:contentDescription="@string/expand"
+        android:src="@drawable/ic_share"
+        android:visibility="gone"
+        app:fabCustomSize="40dp"
+        app:rippleColor="@color/white" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/detFav"
+        style="@style/CustomFab"
+        android:contentDescription="@string/expand"
+        android:src="@drawable/ic_unfavorite"
+        android:tint="@color/white"
+        android:visibility="gone"
+        app:fabCustomSize="40dp"
+        app:rippleColor="@color/red" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/detExpand"
+        style="@style/CustomFab"
+        android:contentDescription="@string/expand"
+        android:src="@drawable/ic_expand"
+        android:visibility="gone"
+        app:fabCustomSize="56dp"
+        app:rippleColor="@color/background" />
+
+    <ProgressBar
+        android:id="@+id/detLoading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
